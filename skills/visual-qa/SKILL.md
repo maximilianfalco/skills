@@ -89,7 +89,7 @@ $Q/upload.sh <pr> "$SCRATCH"/before-*.png "$SCRATCH"/after-*.png "$SCRATCH/<case
 
 It commits under `pr-<n>/` on `qa-assets` with a private index (your branch is untouched), creates the branch as an orphan if missing, never force-pushes, and prints one `![alt](...?raw=true)` per file. Private repo urls load for anyone signed in with access. If the repo deploys every branch (Vercel, Netlify), turn that off for `qa-assets` first or skip this path. mp4s show as links, gifs render inline.
 
-With the Chrome MCP connected (or when pushing a branch is not OK): open the PR, `file_upload` the files into the description's file input (`find` "the first file input used by the PR description body"), wait ~6 s, run `scripts/grab-attachments.js` in `javascript_tool`. It returns `alt url` pairs and restores the box; never save the edit form. For text endpoints seen logged out, `scripts/show.js` renders a URL fetched with no cookies for a `zoom` capture.
+With the Chrome MCP connected (or when pushing a branch is not OK): open the PR, `file_upload` the files into the description's file input (`find` "the first file input used by the PR description body"), wait ~6 s, run `scripts/grab-attachments.js` in `javascript_tool`. It returns `alt url` pairs and restores the box; never save the edit form. For text endpoints seen logged out, `scripts/show.js` renders a URL fetched with no cookies for a `zoom` capture (pass the first screenshot's width as `frameWidth` so the region is in frame pixels).
 
 Neither works: tell the user which files to drag into the PR body, with their paths.
 

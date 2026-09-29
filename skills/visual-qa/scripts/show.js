@@ -22,6 +22,6 @@ window.__show = async (url, opts = {}) => {
   document.body.appendChild(p);
   // No requestAnimationFrame here. It never fires in a background tab, so the call hangs.
   const r = p.getBoundingClientRect();
-  const k = (opts.frameWidth || 1512) / innerWidth;
+  const k = (opts.frameWidth || innerWidth) / innerWidth;
   return { status: res.status, url: res.url, region: [0, 0, Math.ceil(r.width * k) + 4, Math.ceil(r.height * k) + 4] };
 };
